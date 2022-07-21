@@ -3,6 +3,7 @@ import { Andress } from 'src/modules/andress/entities/andress.entity';
 import { IAndressRepository } from 'src/modules/andress/repositories/andress.interface';
 import { EntityRepository, Repository } from 'typeorm';
 
+@EntityRepository(Andress)
 export class AndressRepository
   extends Repository<Andress>
   implements IAndressRepository
@@ -12,10 +13,10 @@ export class AndressRepository
     return andress;
   }
 
-  //   async findByCep(cep: any): Promise<Andress> {
-  //     const andress = await this.findOne(cep);
-  //     return andress;
-  //   }
+  async findByCep(cep: string): Promise<Andress> {
+    const andress = await this.findOne({ cep });
+    return andress;
+  }
 
   async createAndress({
     cep,

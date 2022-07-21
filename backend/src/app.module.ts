@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { AndressModule } from './modules/andress/andress.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), AndressModule],
+  imports: [TypeOrmModule.forRoot(), , AndressModule],
   controllers: [AppController],
   providers: [AppService],
 })
