@@ -1,24 +1,24 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class CreateAndressDto {
   @ApiProperty()
   @IsString()
   cep: string;
 
-  @ApiProperty()
+  @IsOptional()
   @IsString()
   street: string;
 
-  @ApiProperty()
+  @IsOptional()
   @IsString()
   district: string;
 
-  @ApiProperty()
+  @IsOptional()
   @IsString()
   city: string;
 
-  @ApiProperty()
+  @IsOptional()
   @IsString()
   uf: string;
 }
