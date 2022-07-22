@@ -1,7 +1,6 @@
 import { CreateAndressDto } from 'src/modules/andress/dto/create-andress.dto';
 import { Andress } from 'src/modules/andress/entities/andress.entity';
 import { IAndressRepository } from 'src/modules/andress/repositories/andress.interface';
-
 import { EntityRepository, Repository } from 'typeorm';
 
 @EntityRepository(Andress)
@@ -26,8 +25,6 @@ class AndressRepository
     city,
     uf,
   }: CreateAndressDto): Promise<Andress> {
-    // const cepExists = this.findOne({ cep });
-
     const andressCreated = this.create({ cep, street, district, city, uf });
 
     await this.save(andressCreated);

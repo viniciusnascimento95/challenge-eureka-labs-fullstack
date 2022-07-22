@@ -14,13 +14,13 @@ export class Andress {
   cep: string;
 
   @Column()
-  street: string; // logradouro
+  street: string;
 
   @Column()
-  district: string; // Bairro
+  district: string;
 
   @Column()
-  city: string; // Localidade
+  city: string;
 
   @Column()
   uf: string;
