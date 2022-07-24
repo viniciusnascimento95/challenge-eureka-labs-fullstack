@@ -1,3 +1,7 @@
+### Screenshots
+
+![App Screenshot](https://github.com/viniciusnascimento95/challenge-eureka-labs-fullstack/tree/master/backend/screen-test.png)
+
 ### Task
 
 [x] fazer consulta via cep
@@ -5,7 +9,6 @@
 [x] rotas para inserção de dados de
 [x] validações quando cep não encontrado
 [x] testes integração
-[ ] testes de persistência não
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

@@ -4,7 +4,7 @@ import { IAndressRepository } from 'src/modules/andress/repositories/andress.int
 import { EntityRepository, Repository } from 'typeorm';
 
 @EntityRepository(Andress)
-class AndressRepository
+export class AndressRepository
   extends Repository<Andress>
   implements IAndressRepository
 {
@@ -32,5 +32,3 @@ class AndressRepository
     return andressCreated;
   }
 }
-
-export { AndressRepository };
