@@ -1,3 +1,12 @@
+### Task
+
+[x] fazer consulta via cep
+[x] criar migrations banco de dados de
+[x] rotas para inserção de dados de
+[x] validações quando cep não encontrado
+[x] testes integração
+[ ] testes de persistência não
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
