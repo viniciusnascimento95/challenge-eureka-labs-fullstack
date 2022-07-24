@@ -1,6 +1,6 @@
 ### Screenshots
 
-![App Screenshot](https://github.com/viniciusnascimento95/challenge-eureka-labs-fullstack/tree/master/backend/screen-test.png)
+![App Screenshot](https://github.com/viniciusnascimento95/challenge-eureka-labs-fullstack/blob/master/backend/screen-test.png)
 
 ### Task
 
