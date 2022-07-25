@@ -57,7 +57,6 @@ export function TableAndress() {
                 <Td>{cep.uf}</Td>
               </Tr>
             ))}
-          {/* <Td>{JSON.stringify(ceps[0])}</Td> */}
         </Tbody>
       </Table>
     </TableContainer>

@@ -8,8 +8,8 @@ import {
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import { Logo } from "./Logo";
-import { InputCep } from "./components/Input";
 import { TableAndress } from "./components/ListAndress";
+import { FormCep } from "./components/FormCep";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -20,7 +20,9 @@ export const App = () => (
           <Logo h="10vmin" pointerEvents="none" />
 
           <Container maxW="5xl">
-            <InputCep />
+            {/* <InputCep /> */}
+            <FormCep />
+
             <TableAndress />
           </Container>
         </VStack>
