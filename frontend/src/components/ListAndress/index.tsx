@@ -4,12 +4,35 @@ import {
   Tbody,
   Tr,
   Th,
-  Td,
   TableCaption,
   TableContainer,
+  Td,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+
+interface CepData {
+  id: string;
+  cep: string;
+  street: string;
+  district: string;
+  city: string;
+  uf: string;
+  created_at: Date;
+}
 
 export function TableAndress() {
+  const [ceps, setCep] = useState<CepData[]>();
+
+  useEffect(() => {
+    api
+      .get("/andress")
+      .then((response) => setCep(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
   return (
     <TableContainer>
       <Table variant="simple">
@@ -24,13 +47,17 @@ export function TableAndress() {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>76803-000</Td>
-            <Td>Rua: teste</Td>
-            <Td>Bairro teste</Td>
-            <Td>Cidade teste</Td>
-            <Td>UF teste</Td>
-          </Tr>
+          {ceps &&
+            ceps.map((cep) => (
+              <Tr key={cep.id}>
+                <Td>{cep.cep}</Td>
+                <Td>{cep.street}</Td>
+                <Td>{cep.district}</Td>
+                <Td>{cep.city}</Td>
+                <Td>{cep.uf}</Td>
+              </Tr>
+            ))}
+          {/* <Td>{JSON.stringify(ceps[0])}</Td> */}
         </Tbody>
       </Table>
     </TableContainer>
