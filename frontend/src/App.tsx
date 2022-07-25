@@ -18,11 +18,8 @@ export const App = () => (
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
           <Logo h="10vmin" pointerEvents="none" />
-
           <Container maxW="5xl">
-            {/* <InputCep /> */}
             <FormCep />
-
             <TableAndress />
           </Container>
         </VStack>

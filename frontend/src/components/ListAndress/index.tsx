@@ -7,6 +7,8 @@ import {
   TableCaption,
   TableContainer,
   Td,
+  Link,
+  Icon,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
@@ -35,8 +37,19 @@ export function TableAndress() {
 
   return (
     <TableContainer>
-      <Table variant="simple">
-        <TableCaption>Endereços fornecidos pelo viaCep</TableCaption>
+      <Table
+        variant="striped"
+        colorScheme="teal"
+        border="1px"
+        borderRadius="md"
+        borderColor="teal.300"
+      >
+        <TableCaption>
+          Endereços fornecidos pelo
+          <Link color="teal.500" href="https://viacep.com.br/" isExternal>
+            &nbsp;viaCep <Icon name="external-link" mx="2px" />
+          </Link>
+        </TableCaption>
         <Thead>
           <Tr>
             <Th>CEP</Th>

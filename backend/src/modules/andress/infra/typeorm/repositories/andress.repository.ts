@@ -9,7 +9,7 @@ export class AndressRepository
   implements IAndressRepository
 {
   async listAndressAll(): Promise<Andress[]> {
-    const andress = await this.find();
+    const andress = await this.find({ order: { created_at: 'DESC' } });
     return andress;
   }
 

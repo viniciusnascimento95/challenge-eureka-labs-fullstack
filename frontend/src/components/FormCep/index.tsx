@@ -1,20 +1,34 @@
 import {
+  Alert,
+  AlertIcon,
+  Box,
   Button,
   Flex,
   FormControl,
   FormLabel,
   Input,
-  Stack,
   useToast,
 } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 import { Field, Form, Formik } from "formik";
 import { api } from "../../services/api";
+import * as yup from "yup";
 
 export function FormCep() {
   const toast = useToast();
 
+  const validationSchema = yup.object({
+    cep: yup
+      .string()
+      .matches(/^[0-9]+$/, "Apenas números")
+      .min(8, "Deve conter 8 digitos")
+      .max(8, "Deve conter apenas 8 digitos")
+      .required("Informe um cep valido"),
+  });
+
   return (
     <Formik
+      validationSchema={validationSchema}
       initialValues={{ cep: "" }}
       onSubmit={async (values, actions) => {
         await api
@@ -28,9 +42,13 @@ export function FormCep() {
                 duration: 9000,
                 isClosable: true,
               });
+              setTimeout(() => {
+                window.location.reload();
+              }, 1000);
             }
           })
           .catch(function (error) {
+            console.log(error);
             toast({
               title: "Falha na comunicação.",
               description: "Infelizmente aconteceu algum erro :(",
@@ -41,25 +59,35 @@ export function FormCep() {
           });
       }}
     >
-      {({ handleSubmit }) => (
+      {({ handleSubmit, errors, touched }) => (
         <Form onSubmit={handleSubmit}>
           <FormControl isRequired>
-            <FormLabel htmlFor="text">CEP:</FormLabel>
-            <Flex color="black">
-              <Field
-                htmlSize={4}
-                as={Input}
-                id="cep"
-                name="cep"
-                type="text"
-                variant="filled"
-              />
+            <Flex color="black" mb={12} border="1px" borderColor="teal.300">
+              <Box p="5">
+                <FormLabel htmlFor="text" data-cy="cepLabel">
+                  CEP:
+                </FormLabel>
+                <Field
+                  as={Input}
+                  id="cep"
+                  name="cep"
+                  type="text"
+                  variant="filled"
+                />
+                {errors.cep && touched.cep ? (
+                  <Alert status="warning" mt={5}>
+                    <AlertIcon />
+                    {errors.cep}
+                  </Alert>
+                ) : null}
+              </Box>
+              <Box pt="5">
+                <Button mt={8} colorScheme="teal" type="submit">
+                  <SearchIcon />
+                  &nbsp;Buscar endereço
+                </Button>
+              </Box>
             </Flex>
-            <Stack spacing={1}>
-              <Button mt={4} mb={12} colorScheme="teal" type="submit">
-                Buscar endereço
-              </Button>
-            </Stack>
           </FormControl>
         </Form>
       )}
