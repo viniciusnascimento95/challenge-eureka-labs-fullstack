@@ -1,4 +1,6 @@
-![Screenshot](test-e2e.png)
+## Screenshots
+
+![Screenshot](./images/test-e2e.png)
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
