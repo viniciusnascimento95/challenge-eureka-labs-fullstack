@@ -1,8 +1,25 @@
 ### challenge-eureka-labs-fullstack
 
+## About project
+
+Elaborar uma aplicação para ajudar um usuário a fazer a consulta de um CEP. Onde ao
+informar um CEP a tela apresentará informações de endereço como bairro, município e
+logradouro. Para tal crie uma um api rest com integração com o serviço ViaCEP e uma
+aplicação web.
+
+No backend deverá ser feito um cache das consultas realizadas pelo usuário. Após
+uma consulta ser feita na api do viaCEP, as informações de endereço devem ser
+armazenadas em um banco de dado e nas consultas subsequentes do mesmo CEP,
+estas informações devem ser retornadas com o que foi salvo no banco de dados sem
+buscar novamente no serviço viaCEP.
+
+O frontend deve possuir uma tela com um campo para informar o CEP, um botão para
+realizar a busca, e após clicar no botão deverá ser apresentado as informações do
+endereço.
+
 ## Tech Stack
 
-**Client:** React, Chakra ui, Axios, Cypress
+**Client:** React, Chakra ui, Yup, Axios, Cypress
 
 **Server:** Nest.js, PostgreSQL, Typeorm, Docker, Jest.js,
 

@@ -50,8 +50,8 @@ export function FormCep() {
           .catch(function (error) {
             console.log(error);
             toast({
-              title: "Falha na comunicação.",
-              description: "Infelizmente aconteceu algum erro :(",
+              title: "Cep invalido.",
+              description: "Infelizmente o cep informado é invalido :(",
               status: "warning",
               duration: 9000,
               isClosable: true,
