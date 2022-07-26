@@ -4,7 +4,7 @@
 
 **Client:** React, Chakra ui, Axios, Cypress
 
-**Server:** Nest.js, PostgreSQL, Docker, Jest.js,
+**Server:** Nest.js, PostgreSQL, Typeorm, Docker, Jest.js,
 
 ## Installation
 
@@ -16,7 +16,9 @@ Clone the project
   cd challenge-eureka-labs-fullstack
 ```
 
-### Directory project
+# Backend
+
+### Directory project backend
 
     .
     ├── backend                 # Aplication server
@@ -35,10 +37,18 @@ Install dependencies NPM
   npm install
 ```
 
+## Docker
+
 Start database PostgreSQL
 
 ```bash
   docker-compose up
+```
+
+Run migrations api backend
+
+```bash
+  npm run typeorm migration:run
 ```
 
 Start backend
@@ -62,6 +72,34 @@ To run tests, run the following command
 ## API docs run in http://localhost:3333/api
 
 ![Screenshot](./backend/images/swagger-docs-api.png)
+
+## Frontend
+
+Go to the project directory
+
+```bash
+  cd frontend
+```
+
+Install dependencies NPM
+
+```bash
+  npm install
+```
+
+Start web server Local: http://localhost:3000
+
+```bash
+  npm start
+```
+
+## Screenshots frontend
+
+![Screenshot](./frontend/images/home.png)
+
+## Result test e2e with Cypress
+
+![Screenshot](./frontend/images/test-e2e.png)
 
 ### Obrigatório
 
